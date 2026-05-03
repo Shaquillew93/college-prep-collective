@@ -1,0 +1,2705 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The College Prep Collective | Dr. Krystal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --navy: #0d1b2e;
+            --navy-mid: #162640;
+            --gold: #c9a84c;
+            --gold-light: #e8c97a;
+            --gold-pale: #f5e9c8;
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --gray: #8a9ab0;
+            --gray-light: #e8edf4;
+            --text: #1a2a3d;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: #faf8f3 !important;
+        }
+
+        body {
+            font-family: ‘DM Sans’, sans-serif;
+            background: #faf8f3 !important;
+            background-image: none !important;
+            color: var(–text);
+            overflow-x: hidden;
+            isolation: isolate;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 4rem;
+            background: rgba(13, 27, 46, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(–white);
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            color: var(–gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(–gold);
+        }
+
+        .nav-cta {
+            background: var(–gold);
+            color: var(–navy) !important;
+            padding: 0.55rem 1.4rem;
+            border-radius: 2px;
+            font-weight: 600 !important;
+            transition: background 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(–gold-light) !important;
+            color: var(–navy) !important;
+        }
+
+        /* ── HERO ── */
+        #hero {
+            min-height: 100vh;
+            background: #0d1b2e !important;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 8rem 4rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-bg-glow {
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-bg-glow2 {
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(22, 38, 64, 0.8) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(–gold);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-eyebrow::before {
+            content: ‘’;
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: var(–gold);
+        }
+
+        h1 {
+            font-family: ‘Playfair Display’, serif;
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            color: #ffffff !important;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.8rem;
+        }
+
+        h1 em {
+            color: var(–gold) !important;
+            font-style: italic;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.85) !important;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+            max-width: 480px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-eyebrow {
+            color: #e8c97a !important;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(–gold);
+            color: var(–navy);
+            padding: 1rem 2.2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.25s;
+            display: inline-block;
+            border: 2px solid var(–gold);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(–gold);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(–white);
+            padding: 1rem 2.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.25s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            border-color: var(–gold);
+            color: var(–gold);
+        }
+
+        /* Stats panel */
+        .hero-stats {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 1.5rem;
+            padding-left: 4rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 4px;
+            padding: 2rem 2.5rem;
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(201, 168, 76, 0.6);
+            transform: translateY(-4px);
+        }
+
+        .stat-num {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(–gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.5rem;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* ── SECTION BASE ── */
+        section {
+            padding: 7rem 4rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(–gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-eyebrow::before {
+            content: ‘’;
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(–gold);
+        }
+
+        h2 {
+            font-family: ‘Playfair Display’, serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(–navy);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 em {
+            font-style: italic;
+            color: var(–gold);
+        }
+
+        /* ── ABOUT ── */
+        #about {
+            background: var(–white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-photo-frame {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(–navy) 0%, var(–navy-mid) 100%);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-photo-placeholder {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .about-photo-placeholder svg {
+            width: 80px;
+            height: 80px;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .about-photo-placeholder p {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .about-accent-box {
+            position: absolute;
+            bottom: -2rem;
+            right: -2rem;
+            background: var(–gold);
+            padding: 1.8rem 2rem;
+            border-radius: 4px;
+            z-index: 2;
+            box-shadow: 0 20px 60px rgba(201, 168, 76, 0.3);
+        }
+
+        .accent-quote {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(–navy);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #4a5a6e;
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .cred-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.88rem;
+            color: var(–text);
+        }
+
+        .cred-item::before {
+            content: ‘✦’;
+            color: var(–gold);
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        /* ── WHO ITS FOR ── */
+        #who {
+            background: #0d1b2e !important;
+            background: var(–navy);
+            text-align: center;
+        }
+
+        #who h2 {
+            color: var(–white);
+        }
+
+        .year-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .year-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 4px;
+            padding: 3rem 2.5rem;
+            text-align: left;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .year-card::before {
+            content: ‘’;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(–gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .year-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .year-card:hover {
+            border-color: rgba(201, 168, 76, 0.5);
+            transform: translateY(-6px);
+        }
+
+        .year-num {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 5rem;
+            font-weight: 300;
+            color: rgba(201, 168, 76, 0.25);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .year-title {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.4rem;
+            color: var(–white);
+            margin-bottom: 1rem;
+        }
+
+        .year-desc {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* ── SERVICES ── */
+        #services {
+            background: var(–cream);
+        }
+
+        .services-intro {
+            max-width: 600px;
+            margin-bottom: 4rem;
+        }
+
+        .services-intro p {
+            font-size: 1.05rem;
+            color: #5a6a7e;
+            line-height: 1.75;
+        }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tier-card {
+            background: var(–white);
+            border-radius: 4px;
+            padding: 3rem 2.5rem;
+            border: 1px solid var(–gray-light);
+            position: relative;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 80px rgba(13, 27, 46, 0.12);
+        }
+
+        .tier-card.popular {
+            border: 2px solid var(–gold);
+            box-shadow: 0 20px 60px rgba(201, 168, 76, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -1px;
+            right: 2.5rem;
+            background: var(–gold);
+            color: var(–navy);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .tier-num {
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(–gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .tier-name {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.8rem;
+            color: var(–navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-tag {
+            font-size: 0.85rem;
+            color: var(–gray);
+            margin-bottom: 2rem;
+        }
+
+        .tier-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            flex: 1;
+        }
+
+        .tier-features li {
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(–gray-light);
+            font-size: 0.9rem;
+            color: var(–text);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .tier-features li::before {
+            content: ‘✦’;
+            color: var(–gold);
+            font-size: 0.6rem;
+            margin-top: 0.3rem;
+            flex-shrink: 0;
+        }
+
+        .tier-price {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 2.5rem;
+            color: var(–navy);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .tier-price-note {
+            font-size: 0.8rem;
+            color: var(–gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-tier {
+            display: block;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.25s;
+            border: 2px solid var(–navy);
+            color: var(–navy);
+        }
+
+        .btn-tier:hover {
+            background: var(–navy);
+            color: var(–white);
+        }
+
+        .tier-card.popular .btn-tier {
+            background: var(–gold);
+            border-color: var(–gold);
+            color: var(–navy);
+        }
+
+        .tier-card.popular .btn-tier:hover {
+            background: var(–navy);
+            border-color: var(–navy);
+            color: var(–white);
+        }
+
+        /* Guide card */
+        .guide-card {
+            margin-top: 3rem;
+            background: var(–navy);
+            border-radius: 4px;
+            padding: 3rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .guide-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(–gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .guide-title {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.8rem;
+            color: var(–white);
+            margin-bottom: 1rem;
+        }
+
+        .guide-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .guide-feat {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .guide-feat::before {
+            content: ‘✦’;
+            color: var(–gold);
+            font-size: 0.55rem;
+        }
+
+        /* ── RESULTS ── */
+        #results {
+            background: var(–white);
+        }
+
+        .results-intro {
+            max-width: 640px;
+        }
+
+        .results-intro p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #4a5a6e;
+            margin-bottom: 2rem;
+        }
+
+        .results-grid {
+            margin-top: 4rem;
+        }
+
+        .results-stat-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .result-stat {
+            background: var(–navy);
+            border-radius: 4px;
+            padding: 3rem;
+            border-left: 4px solid var(–gold);
+        }
+
+        .rs-num {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 5rem;
+            font-weight: 300;
+            color: var(–gold);
+            line-height: 1;
+        }
+
+        .rs-title {
+            font-size: 1rem;
+            color: var(–white);
+            margin: 0.5rem 0 0.8rem;
+            font-weight: 600;
+        }
+
+        .rs-desc {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.6;
+        }
+
+        .schools-section {
+            margin-top: 1rem;
+        }
+
+        .schools-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(–gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .schools-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .school-pill {
+            background: var(–gray-light);
+            border-radius: 2px;
+            padding: 0.5rem 1.1rem;
+            font-size: 0.82rem;
+            color: var(–text);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .school-pill:hover {
+            border-color: var(–gold);
+            color: var(–navy);
+        }
+
+        .school-pill.ivy {
+            background: var(–gold-pale);
+            border-color: rgba(201, 168, 76, 0.3);
+        }
+
+        .school-pill.hbcu {
+            background: #f0f4ff;
+            border-color: rgba(13, 27, 46, 0.15);
+        }
+
+        /* ── HOW IT WORKS ── */
+        #how {
+            background: var(–cream);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .step-card {
+            background: var(–white);
+            border-radius: 4px;
+            padding: 3rem;
+            border: 1px solid var(–gray-light);
+            display: flex;
+            gap: 2rem;
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            border-color: var(–gold);
+            box-shadow: 0 20px 60px rgba(13, 27, 46, 0.08);
+        }
+
+        .step-num {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: rgba(201, 168, 76, 0.3);
+            line-height: 1;
+            flex-shrink: 0;
+            width: 60px;
+        }
+
+        .step-title {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.3rem;
+            color: var(–navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: #5a6a7e;
+        }
+
+        /* ── FAQ ── */
+        #faq {
+            background: #0d1b2e !important;
+        }
+
+        #faq h2 {
+            color: var(–white);
+        }
+
+        #faq .section-eyebrow {
+            color: var(–gold);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 4px;
+            padding: 2rem 2.5rem;
+            transition: border-color 0.3s;
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(201, 168, 76, 0.5);
+        }
+
+        .faq-q {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.1rem;
+            color: var(–white);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .faq-icon {
+            color: var(–gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* ── CTA ── */
+        #cta {
+            background: linear-gradient(135deg, var(–gold) 0%, var(–gold-light) 100%);
+            text-align: center;
+            padding: 8rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cta::before {
+            content: ‘’;
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(13, 27, 46, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13, 27, 46, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        #cta h2 {
+            color: var(–navy);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        #cta p {
+            font-size: 1.1rem;
+            color: rgba(13, 27, 46, 0.75);
+            max-width: 520px;
+            margin: 0 auto 3rem;
+            line-height: 1.75;
+        }
+
+        .btn-dark {
+            display: inline-block;
+            background: var(–navy);
+            color: var(–white);
+            padding: 1.2rem 3rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.25s;
+            border: 2px solid var(–navy);
+        }
+
+        .btn-dark:hover {
+            background: transparent;
+            color: var(–navy);
+        }
+
+        .cta-sub {
+            display: block;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(13, 27, 46, 0.6);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-sub:hover {
+            color: var(–navy);
+            text-decoration: underline;
+        }
+
+        /* ── CONTACT MODAL ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(13, 27, 46, 0.85);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: var(–white);
+            border-radius: 4px;
+            padding: 3.5rem;
+            width: 100%;
+            max-width: 540px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-top: 4px solid var(–gold);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(–gray);
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(–navy);
+        }
+
+        .modal h3 {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.8rem;
+            color: var(–navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-sub {
+            font-size: 0.9rem;
+            color: var(–gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(–navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(–gray-light);
+            border-radius: 2px;
+            font-family: ‘DM Sans’, sans-serif;
+            font-size: 0.95rem;
+            color: var(–text);
+            background: var(–cream);
+            transition: border-color 0.2s;
+            outline: none;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(–gold);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(–gold);
+            color: var(–navy);
+            padding: 1.1rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: ‘DM Sans’, sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: var(–navy);
+            color: var(–white);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .form-success .check {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-success h4 {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.5rem;
+            color: var(–navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-success p {
+            color: var(–gray);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #0d1b2e !important;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .footer-brand {}
+
+        .footer-logo {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 1.3rem;
+            color: var(–white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(–gold);
+        }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(–gold);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul a:hover {
+            color: var(–gold);
+        }
+
+        .footer-bottom {
+            background: #0d1b2e !important;
+            padding: 1.5rem 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-content>* {
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .hero-content>*:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .hero-content>*:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        .hero-content>*:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .hero-content>*:nth-child(4) {
+            animation-delay: 0.55s;
+        }
+
+        .hero-stats {
+            animation: fadeIn 1.2s ease 0.6s both;
+        }
+
+        /* ── VIP TIER ── */
+        .vip-card {
+            margin-top: 2rem;
+            background: var(–navy);
+            border-radius: 4px;
+            border: 1px solid rgba(201, 168, 76, 0.35);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .vip-card::before {
+            content: ‘’;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .vip-left {
+            padding: 3.5rem;
+            border-right: 1px solid rgba(201, 168, 76, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        .vip-right {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201, 168, 76, 0.15);
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            color: var(–gold);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .vip-badge::before {
+            content: ‘✦’;
+            font-size: 0.55rem;
+        }
+
+        .vip-name {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 2.4rem;
+            color: var(–white);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .vip-subtitle {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .vip-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .vip-restriction {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 3px;
+            padding: 1rem 1.2rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.5;
+        }
+
+        .vip-restriction::before {
+            content: ‘ⓘ’;
+            color: var(–gold);
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .vip-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .vip-features li {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .vip-features li::before {
+            content: ‘›’;
+            color: var(–gold);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            line-height: 1.3;
+        }
+
+        .vip-price-block {
+            margin-bottom: 2rem;
+        }
+
+        .vip-price {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 4.5rem;
+            font-weight: 300;
+            color: var(–gold);
+            line-height: 1;
+        }
+
+        .vip-price-note {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 0.4rem;
+        }
+
+        .vip-spots {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .vip-spot-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(–gold);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
+        }
+
+        .btn-vip {
+            display: block;
+            text-align: center;
+            background: var(–gold);
+            color: var(–navy);
+            padding: 1.2rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 2px;
+            border: 2px solid var(–gold);
+            transition: all 0.25s;
+        }
+
+        .btn-vip:hover {
+            background: transparent;
+            color: var(–gold);
+        }
+
+        .vip-by-app {
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.25);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 960px) {
+            .vip-card {
+                grid-template-columns: 1fr;
+            }
+
+            .vip-left {
+                border-right: none;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── QUICK WINS ── */
+        #quick-wins {
+            background: #0d1b2e !important;
+        }
+
+        #quick-wins h2 {
+            color: var(–white);
+        }
+
+        .qw-intro {
+            max-width: 600px;
+            margin-bottom: 4rem;
+        }
+
+        .qw-intro p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.75;
+            margin-top: 1rem;
+        }
+
+        .qw-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .qw-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.18);
+            border-radius: 4px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qw-card::after {
+            content: ‘’;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(–gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .qw-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .qw-card:hover {
+            border-color: rgba(201, 168, 76, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .qw-type {
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(–gold);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qw-type::before {
+            content: ‘’;
+            width: 18px;
+            height: 1px;
+            background: var(–gold);
+            display: block;
+        }
+
+        .qw-name {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 1.35rem;
+            color: var(–white);
+            line-height: 1.2;
+        }
+
+        .qw-desc {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .qw-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .qw-features li {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.45);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .qw-features li::before {
+            content: ‘—’;
+            color: var(–gold);
+            flex-shrink: 0;
+        }
+
+        .qw-price-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .qw-price {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 2.4rem;
+            color: var(–gold);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .qw-price sup {
+            font-size: 1rem;
+            vertical-align: super;
+        }
+
+        .btn-qw {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(–navy);
+            background: var(–gold);
+            padding: 0.55rem 1.1rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+            border: 2px solid var(–gold);
+        }
+
+        .btn-qw:hover {
+            background: transparent;
+            color: var(–gold);
+        }
+
+        .qw-workshop {
+            grid-column: span 1;
+        }
+
+        /* ── MEMBERSHIP ── */
+        #membership {
+            background: var(–cream);
+        }
+
+        .membership-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .membership-left {}
+
+        .membership-card {
+            background: var(–navy);
+            border-radius: 4px;
+            padding: 3.5rem;
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .membership-card::before {
+            content: ‘’;
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 70%);
+        }
+
+        .mem-badge {
+            display: inline-block;
+            background: var(–gold);
+            color: var(–navy);
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.35rem 0.9rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .mem-title {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 2rem;
+            color: var(–white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .mem-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+
+        .mem-price-block {
+            margin-bottom: 2rem;
+        }
+
+        .mem-price {
+            font-family: ‘Cormorant Garamond’, serif;
+            font-size: 4rem;
+            color: var(–gold);
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .mem-price sub {
+            font-size: 1.5rem;
+            vertical-align: baseline;
+        }
+
+        .mem-price-note {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 0.3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .mem-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .mem-features li {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .mem-features li::before {
+            content: ‘✦’;
+            color: var(–gold);
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .btn-mem {
+            display: block;
+            text-align: center;
+            background: var(–gold);
+            color: var(–navy);
+            padding: 1.1rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 2px;
+            border: 2px solid var(–gold);
+            transition: all 0.25s;
+        }
+
+        .btn-mem:hover {
+            background: transparent;
+            color: var(–gold);
+        }
+
+        .membership-right {}
+
+        .mem-right-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(–gold);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .mem-right-eyebrow::before {
+            content: ‘’;
+            width: 24px;
+            height: 1px;
+            background: var(–gold);
+            display: block;
+        }
+
+        .mem-right h3 {
+            font-family: ‘Playfair Display’, serif;
+            font-size: 2.2rem;
+            color: var(–navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .mem-right p {
+            font-size: 1rem;
+            color: #5a6a7e;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .mem-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .mem-perk {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            padding: 1.2rem;
+            background: var(–white);
+            border-radius: 4px;
+            border: 1px solid var(–gray-light);
+            transition: border-color 0.2s;
+        }
+
+        .mem-perk:hover {
+            border-color: rgba(201, 168, 76, 0.4);
+        }
+
+        .mem-perk-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .mem-perk-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(–navy);
+            margin-bottom: 0.2rem;
+        }
+
+        .mem-perk-desc {
+            font-size: 0.83rem;
+            color: var(–gray);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 960px) {
+            .qw-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .membership-wrap {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            #hero {
+                grid-template-columns: 1fr;
+                padding: 8rem 2rem 4rem;
+            }
+
+            .hero-stats {
+                padding-left: 0;
+                margin-top: 3rem;
+            }
+
+            .stat-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #about {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 4rem 2rem;
+            }
+
+            .about-accent-box {
+                display: none;
+            }
+
+            section {
+                padding: 5rem 2rem;
+            }
+
+            .year-grid,
+            .tier-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-stat-row {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 3rem 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+                padding: 1.5rem 2rem;
+            }
+
+            .guide-card {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAV -->
+
+    <nav>
+        <a href="#" class="nav-logo">The College Prep <span>Collective</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#quick-wins">Quick Wins</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="https://calendly.com/hello-thecollegeprepcollective/30min" target="_blank" rel="noopener"
+                    class="nav-cta">Book Free Call</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+
+    <section id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-glow"></div>
+        <div class="hero-bg-glow2"></div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">College Admissions & Financial Aid Strategy</span>
+            <h1>Your student deserves a <em>real</em> plan — not guesswork.</h1>
+            <p class="hero-sub">With 13 years in college access and admissions — including roles at Columbia University
+                — I help families navigate the college process with clarity, confidence, and a strategy that works.</p>
+            <div class="hero-btns">
+                <a href="https://calendly.com/hello-thecollegeprepcollective/30min" target="_blank" rel="noopener"
+                    class="btn-primary">Book a Free Consultation</a>
+                <a href="#services" class="btn-outline">Explore Services</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-num">13<sup style="font-size:2rem">+</sup></div>
+                <div class="stat-label">Years in College Access & Admissions</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="stat-num">14</div>
+                    <div class="stat-label">QuestBridge Matches in One Year</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">8</div>
+                    <div class="stat-label">Ivy League Acceptances This Cycle</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+        <div class="about-visual reveal">
+            <div class="about-photo-frame" style="background:none;">
+                <img src="IMG_4144.JPG" alt="Dr. Krystal Johnson — Founder, The College Prep Collective"
+                    style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:4px;" />
+            </div>
+            <div class="about-accent-box">
+                <p class="accent-quote">"Every student has<br>a story worth telling."</p>
+            </div>
+        </div>
+        <div class="about-text reveal">
+            <span class="section-eyebrow">About Dr. Krystal</span>
+            <h2>I've sat on <em>both sides</em> of the admissions desk.</h2>
+            <p>I'm Dr. Krystal — founder of The College Prep Collective and a college access professional with over a
+                decade of experience in admissions, financial aid, and college readiness. I've worked at institutions
+                like Columbia University, led college access nonprofits, and helped hundreds of students gain acceptance
+                to highly selective colleges.</p>
+            <p>I built this practice because every student — regardless of zip code or income — deserves expert
+                guidance. No fluff. No fear tactics. Just a clear, personalized strategy.</p>
+            <div class="credentials">
+                <div class="cred-item">Doctorate in Education (Ed.D.)</div>
+                <div class="cred-item">B.A. Communications · M.A. English Literature</div>
+                <div class="cred-item">Former Roles at Columbia University & Mercy University</div>
+                <div class="cred-item">Founder & Senior Director, College Access Nonprofits</div>
+                <div class="cred-item">14 QuestBridge Matches in a Single Academic Year</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+
+    <section id="who">
+        <span class="section-eyebrow" style="justify-content:center;color:var(--gold)">Who This Is For</span>
+        <h2 style="color:var(--white);text-align:center">Wherever your student is,<br><em>we can work from here.</em>
+        </h2>
+        <div class="year-grid">
+            <div class="year-card reveal">
+                <div class="year-num">10</div>
+                <div class="year-title">Sophomore Year</div>
+                <p class="year-desc">Start building the foundation early. Course selection, extracurricular strategy,
+                    GPA goals, and understanding what selective colleges are actually looking for.</p>
+            </div>
+            <div class="year-card reveal">
+                <div class="year-num">11</div>
+                <div class="year-title">Junior Year</div>
+                <p class="year-desc">The most critical year. Test prep planning, college list development, financial aid
+                    education, and beginning to craft your student's story.</p>
+            </div>
+            <div class="year-card reveal">
+                <div class="year-num">12</div>
+                <div class="year-title">Senior Year</div>
+                <p class="year-desc">Application strategy, essay coaching, deadline management, scholarship search, and
+                    financial aid award comparison so your family makes the smartest decision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+
+    <section id="services">
+        <div class="services-intro reveal">
+            <span class="section-eyebrow">Services</span>
+            <h2>Four ways to <em>work together.</em></h2>
+            <p>Whether you're just getting started or ready for the full journey, there's a package built for where your
+                family is right now.</p>
+        </div>
+        <div class="tier-grid">
+            <!-- Tier 01 -->
+            <div class="tier-card reveal">
+                <div class="tier-num">Tier 01</div>
+                <div class="tier-name">The Foundation</div>
+                <p class="tier-tag">For families who want expert clarity on where to begin.</p>
+                <ul class="tier-features">
+                    <li>90-minute strategy session (virtual)</li>
+                    <li>College readiness assessment</li>
+                    <li>Personalized action plan document</li>
+                    <li>Email follow-up support (7 days)</li>
+                </ul>
+                <div class="tier-price">$397</div>
+                <div class="tier-price-note">One-time payment</div>
+                <a target="_blank" rel="noopener"
+                    href="https://stan.store/TheCollegePrepCollective/p/the-foundation-package-e2uwx9np"
+                    class="btn-tier">Get Started</a>
+            </div>
+            <!-- Tier 02 -->
+            <div class="tier-card popular reveal">
+                <div class="popular-badge">Most Popular</div>
+                <div class="tier-num">Tier 02</div>
+                <div class="tier-name">The Strategy</div>
+                <p class="tier-tag">For juniors and early seniors who need a full roadmap.</p>
+                <ul class="tier-features">
+                    <li>3 strategy sessions (60 min each)</li>
+                    <li>College list development (balanced & reach)</li>
+                    <li>Financial aid planning & FAFSA guidance</li>
+                    <li>Scholarship research support</li>
+                    <li>30-day email support</li>
+                </ul>
+                <div class="tier-price">$1,497</div>
+                <div class="tier-price-note">Package pricing</div>
+                <a target="_blank" rel="noopener"
+                    href="https://stan.store/TheCollegePrepCollective/p/the-strategy--1ta6r5gp" class="btn-tier">Get
+                    Started</a>
+            </div>
+            <!-- Tier 03 -->
+            <div class="tier-card reveal">
+                <div class="tier-num">Tier 03</div>
+                <div class="tier-name">The Application</div>
+                <p class="tier-tag">Full-service support from launch through decision day.</p>
+                <ul class="tier-features">
+                    <li>6 sessions through application season</li>
+                    <li>Essay brainstorm, review & coaching</li>
+                    <li>Application review & timeline management</li>
+                    <li>Award letter analysis & negotiation strategy</li>
+                    <li>60-day priority email support</li>
+                </ul>
+                <div class="tier-price">$3,997</div>
+                <div class="tier-price-note">Package pricing</div>
+                <a target="_blank" rel="noopener" href="https://stan.store/TheCollegePrepCollective/p/the-application-"
+                    class="btn-tier">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Tier 04 VIP -->
+
+        <div class="tier-card reveal"
+            style="border:2px solid var(--gold);box-shadow:0 20px 60px rgba(201,168,76,0.15);margin-top:2rem;max-width:100%;position:relative;">
+            <div class="popular-badge" style="background:var(--navy);color:var(--gold);border:1px solid var(--gold);">
+                Tier 04 · By Application Only</div>
+            <div class="tier-num">Tier 04</div>
+            <div class="tier-name">The VIP Experience</div>
+            <p class="tier-tag">For families who want full-cycle support from start to finish.</p>
+            <ul class="tier-features">
+                <li>Bi-weekly sessions (August through April)</li>
+                <li>College list development &amp; strategy</li>
+                <li>Full essay brainstorm, review &amp; coaching</li>
+                <li>Application review &amp; timeline management</li>
+                <li>Financial aid planning &amp; FAFSA guidance</li>
+                <li>Award letter analysis &amp; negotiation strategy</li>
+                <li>Scholarship research support</li>
+                <li>Priority email access to Dr. K</li>
+            </ul>
+            <p style="font-size:0.78rem;color:var(--gray);margin-bottom:1.5rem;font-style:italic;">⚠ Not available for
+                QuestBridge or Early Decision students.</p>
+            <div class="tier-price">$8,500</div>
+            <div class="tier-price-note">Package pricing · Only 3 spots per cycle</div>
+            <a target="_blank" rel="noopener" href="https://stan.store/TheCollegePrepCollective/p/the-vip-package"
+                class="btn-tier" style="background:var(--gold);color:var(--navy);border-color:var(--gold);">Apply for
+                Your Spot</a>
+        </div>
+
+        <!-- Guide -->
+
+        <div class="guide-card reveal">
+            <div>
+                <div class="guide-tag">Digital Guide · $25</div>
+                <div class="guide-title">Not sure where to start? <em style="font-style:italic;color:var(--gold)">This
+                        is for you.</em></div>
+                <div class="guide-features">
+                    <span class="guide-feat">Year-by-year checklist (9th–12th grade)</span>
+                    <span class="guide-feat">Financial aid myths debunked</span>
+                    <span class="guide-feat">5 mistakes families make on applications</span>
+                    <span class="guide-feat">How to evaluate a college's real cost</span>
+                </div>
+            </div>
+            <div>
+                <a target="_blank" rel="noopener"
+                    href="https://stan.store/TheCollegePrepCollective/p/the-college-blueprint" class="btn-primary">Get
+                    the Guide — $25 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK WINS -->
+
+    <section id="quick-wins">
+        <div class="qw-intro reveal">
+            <span class="section-eyebrow" style="color:var(--gold)">Quick Wins</span>
+            <h2 style="color:var(--white)">Targeted support —<br><em>no long-term commitment required.</em></h2>
+            <p>Need help with one specific piece of the process? These one-time sessions and document reviews get you
+                expert eyes exactly where you need them.</p>
+        </div>
+        <div class="qw-grid">
+            <div class="qw-card reveal">
+                <div class="qw-type">One-Time Session</div>
+                <div class="qw-name">FAFSA Prep Session</div>
+                <p class="qw-desc">A 60-minute virtual walkthrough of the FAFSA process — so your family submits
+                    confidently and on time.</p>
+                <ul class="qw-features">
+                    <li>60-min virtual session</li>
+                    <li>FAFSA line-by-line guidance</li>
+                    <li>Common mistakes to avoid</li>
+                    <li>Deadline & follow-up checklist</li>
+                </ul>
+                <div class="qw-price-row">
+                    <div class="qw-price"><sup>$</sup>147</div>
+                    <a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/fafsa-prep-session" class="btn-qw">Book
+                        Now</a>
+                </div>
+            </div>
+            <div class="qw-card reveal">
+                <div class="qw-type">One-Time Session</div>
+                <div class="qw-name">Award Letter Analysis</div>
+                <p class="qw-desc">Received financial aid offers? We decode the numbers, compare packages, and build a
+                    negotiation strategy.</p>
+                <ul class="qw-features">
+                    <li>Side-by-side offer comparison</li>
+                    <li>True cost breakdown</li>
+                    <li>Appeal letter strategy & talking points</li>
+                </ul>
+                <div class="qw-price-row">
+                    <div class="qw-price"><sup>$</sup>197</div>
+                    <a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/award-letter-analysis" class="btn-qw">Book
+                        Now</a>
+                </div>
+            </div>
+            <div class="qw-card reveal">
+                <div class="qw-type">Document Review</div>
+                <div class="qw-name">College Essay Review</div>
+                <p class="qw-desc">Submit your draft, receive detailed written feedback on voice, structure, and how it
+                    lands with admissions readers.</p>
+                <ul class="qw-features">
+                    <li>Written feedback within 72 hrs</li>
+                    <li>Voice, structure & impact notes</li>
+                    <li>One revision round included</li>
+                </ul>
+                <div class="qw-price-row">
+                    <div class="qw-price"><sup>$</sup>97</div>
+                    <a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/college-essay-review-5ol3njg6"
+                        class="btn-qw">Submit Draft</a>
+                </div>
+            </div>
+            <div class="qw-card reveal">
+                <div class="qw-type">Document Review</div>
+                <div class="qw-name">College List Audit</div>
+                <p class="qw-desc">Submit your current list — we review fit, balance, and financial aid likelihood
+                    across your reaches, targets, and safeties.</p>
+                <ul class="qw-features">
+                    <li>Written feedback within 5 days</li>
+                    <li>Fit & balance assessment</li>
+                    <li>Financial aid competitiveness notes</li>
+                </ul>
+                <div class="qw-price-row">
+                    <div class="qw-price"><sup>$</sup>127</div>
+                    <a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/college-list-audit" class="btn-qw">Submit
+                        List</a>
+                </div>
+            </div>
+
+            ```
+            <div class="qw-card reveal"
+                style="background:rgba(201,168,76,0.07);border-color:rgba(201,168,76,0.35);justify-content:center;align-items:center;text-align:center;gap:1.5rem;">
+                <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:var(--gold);line-height:1;">?
+                </div>
+                <div class="qw-name" style="font-size:1.2rem;">Not sure which fits?</div>
+                <p class="qw-desc" style="text-align:center;">Book a free 20-minute discovery call and we'll point you
+                    in the right direction — no pressure, no commitment.</p>
+                <a href="https://calendly.com/hello-thecollegeprepcollective/30min" target="_blank" rel="noopener"
+                    class="btn-qw" style="display:inline-block;margin-top:0.5rem;">Book Free Discovery Call</a>
+            </div>
+            ```
+
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+
+    <section id="membership">
+        <div class="membership-wrap">
+            <div class="membership-card reveal">
+                <div class="mem-badge">Community</div>
+                <div class="mem-title">The Collective<br>Membership</div>
+                <p class="mem-desc">Join a community of families navigating the college process together. Get monthly
+                    live Q&amp;As, exclusive resources, early access to workshops, and a private space to ask questions
+                    — all guided by Dr. K.</p>
+                <div class="mem-price-block">
+                    <div class="mem-price"><sub>$</sub>37<span
+                            style="font-size:1.5rem;color:rgba(201,168,76,0.6)">/mo</span></div>
+                    <div class="mem-price-note">Cancel anytime &middot; No contracts</div>
+                </div>
+                <ul class="mem-features">
+                    <li>Monthly live Q&amp;A with Dr. Krystal</li>
+                    <li>Exclusive resources &amp; templates</li>
+                    <li>Early access to all workshops</li>
+                    <li>Private community to ask questions</li>
+                    <li>Insider college prep strategies</li>
+                </ul>
+                <a target="_blank" rel="noopener"
+                    href="https://stan.store/TheCollegePrepCollective/p/the-collective--monthly-membership"
+                    class="btn-mem">Join The Collective &rarr;</a>
+            </div>
+            <div class="membership-right reveal">
+                <div class="mem-right-eyebrow">Why Join</div>
+                <h3>Expert guidance, <em style="font-style:italic;color:var(--gold)">every month.</em></h3>
+                <p>The college process doesn't happen in one session. It unfolds over months — sometimes years. The
+                    Collective gives your family a consistent, affordable touchpoint with expert guidance built into
+                    every step.</p>
+                <p>Perfect for families in 9th–11th grade who aren't ready for full coaching yet, or families who want
+                    ongoing support between package sessions.</p>
+                <div class="mem-perks">
+                    <div class="mem-perk">
+                        <div class="mem-perk-icon">📅</div>
+                        <div>
+                            <div class="mem-perk-title">Monthly Live Q&amp;A</div>
+                            <div class="mem-perk-desc">Bring your real questions. Get real answers from Dr. Krystal in a
+                                live group session every month.</div>
+                        </div>
+                    </div>
+                    <div class="mem-perk">
+                        <div class="mem-perk-icon">📚</div>
+                        <div>
+                            <div class="mem-perk-title">Exclusive Resources</div>
+                            <div class="mem-perk-desc">Checklists, templates, financial aid trackers, and college
+                                research guides — all members-only.</div>
+                        </div>
+                    </div>
+                    <div class="mem-perk">
+                        <div class="mem-perk-icon">🎟️</div>
+                        <div>
+                            <div class="mem-perk-title">Workshop Early Access</div>
+                            <div class="mem-perk-desc">Members get first access and discounted rates on all live
+                                workshops throughout the year.</div>
+                        </div>
+                    </div>
+                    <div class="mem-perk">
+                        <div class="mem-perk-icon">💬</div>
+                        <div>
+                            <div class="mem-perk-title">Private Community</div>
+                            <div class="mem-perk-desc">A curated, supportive space to ask questions, share wins, and
+                                navigate the process with other families.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+
+    <section id="results">
+        <div class="results-intro reveal">
+            <span class="section-eyebrow">Student Results</span>
+            <h2>These acceptances are <em>real.</em></h2>
+            <p>Over 13 years, I've helped students gain admission to some of the most selective institutions in the
+                world — including multiple Ivy League universities, MIT, and full-ride QuestBridge placements. These
+                results aren't accidents. They're the product of strategy, preparation, and knowing how to position each
+                student's unique story.</p>
+        </div>
+        <div class="results-grid">
+            <div class="results-stat-row reveal">
+                <div class="result-stat">
+                    <div class="rs-num">14</div>
+                    <div class="rs-title">QuestBridge Matches in a Single Academic Year</div>
+                    <div class="rs-desc">Full four-year scholarships to elite partner colleges. 14 matches in one year
+                        is an extraordinary outcome — and a testament to the power of early, strategic preparation.
+                    </div>
+                </div>
+                <div class="result-stat">
+                    <div class="rs-num">5<sup style="font-size:2.5rem">+</sup></div>
+                    <div class="rs-title">Ivy League Acceptances in a Single Cycle</div>
+                    <div class="rs-desc">Harvard, Yale, Columbia, UPenn, Dartmouth, and Brown — students guided by Dr.
+                        Krystal are gaining access to the most selective institutions in the world.</div>
+                </div>
+            </div>
+            <div class="schools-section reveal">
+                <div class="schools-label">Schools Where Students Have Been Accepted</div>
+                <div class="schools-wrap">
+                    <span class="school-pill ivy">Harvard University</span>
+                    <span class="school-pill ivy">Yale University</span>
+                    <span class="school-pill ivy">Columbia University</span>
+                    <span class="school-pill ivy">UPenn</span>
+                    <span class="school-pill ivy">Dartmouth College</span>
+                    <span class="school-pill ivy">Brown University</span>
+                    <span class="school-pill">MIT</span>
+                    <span class="school-pill">Northwestern University</span>
+                    <span class="school-pill">Rice University</span>
+                    <span class="school-pill">Caltech (QuestBridge)</span>
+                    <span class="school-pill">Emory University</span>
+                    <span class="school-pill">WashU St. Louis</span>
+                    <span class="school-pill">Amherst College</span>
+                    <span class="school-pill">UT Austin</span>
+                    <span class="school-pill hbcu">Spelman College</span>
+                    <span class="school-pill hbcu">FAMU</span>
+                    <span class="school-pill hbcu">Clark Atlanta University</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+
+    <section id="how">
+        <span class="section-eyebrow reveal">How It Works</span>
+        <h2 class="reveal">Simple. Strategic. <em>Supportive.</em></h2>
+        <div class="steps-grid">
+            <div class="step-card reveal">
+                <div class="step-num">01</div>
+                <div>
+                    <div class="step-title">Book a Free Consultation</div>
+                    <p class="step-desc">We'll spend 20 minutes getting clear on where your student is, what your goals
+                        are, and which package is the right fit for your family.</p>
+                </div>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-num">02</div>
+                <div>
+                    <div class="step-title">Build Your Strategy</div>
+                    <p class="step-desc">Every engagement starts with a full assessment — academic profile, interests,
+                        financial situation, and college goals. From there, we build the plan.</p>
+                </div>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-num">03</div>
+                <div>
+                    <div class="step-title">Execute Together</div>
+                    <p class="step-desc">You won't be left alone with a document. We work through each milestone
+                        together, adjusting as needed through the process.</p>
+                </div>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-num">04</div>
+                <div>
+                    <div class="step-title">Make Your Decision with Confidence</div>
+                    <p class="step-desc">From acceptance letters to award comparisons, we see it through — so your
+                        family makes the right choice, not just an excited one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+
+    <section id="faq">
+        <span class="section-eyebrow">FAQ</span>
+        <h2>Common <em>questions.</em></h2>
+        <div class="faq-grid">
+            <div class="faq-item reveal">
+                <div class="faq-q">When should we start working together? <span class="faq-icon">+</span></div>
+                <div class="faq-a">The earlier the better — sophomore year is ideal. But I've helped seniors with months
+                    until deadlines get great results too. If you're reading this, it's not too late.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">Do you only work with high-achieving students? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Absolutely not. I work with students across all academic profiles. The goal is
+                    finding the right fit college — not the most prestigious one.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">What makes you different from a school counselor? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">School counselors are incredible — and often stretched thin with hundreds of
+                    students. As a private counselor, I give your student my full attention and expertise, tailored
+                    entirely to them.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">Do you help with financial aid? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Yes. Financial aid strategy is woven into everything I do. I help families understand
+                    what colleges actually cost, how to appeal award letters, and how to find scholarship funding.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">Are sessions virtual or in-person? <span class="faq-icon">+</span></div>
+                <div class="faq-a">All sessions are virtual, which means I can work with families anywhere in the
+                    country.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">What if my student is already a senior? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Senior year is one of the most impactful times to get support. Essay coaching,
+                    application review, deadline management, and financial aid strategy can all make a significant
+                    difference even late in the process.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section id="cta">
+        <div class="cta-content">
+            <h2>Ready to build a <em>real</em> plan?</h2>
+            <p>Book a free 20-minute consultation and let's figure out exactly what your family needs.</p>
+            <a href="https://calendly.com/hello-thecollegeprepcollective/30min" target="_blank" rel="noopener"
+                class="btn-dark">Book a Free Consultation</a>
+            <a href="https://stan.store/TheCollegePrepCollective/p/the-college-blueprint" target="_blank" rel="noopener"
+                class="cta-sub">Or start with the $25 guide →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="footer-brand">
+            <div class="footer-logo">The College Prep <span>Collective</span></div>
+            <p class="footer-tagline">Helping families navigate college with confidence — not confusion.</p>
+            <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+                <a href="mailto:hello@thecollegeprepcollective.com"
+                    style="color:var(--gold);font-size:0.85rem;text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:opacity 0.2s;"
+                    onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+                    ✉️ hello@thecollegeprepcollective.com
+                </a>
+                <a href="https://www.thecollegeprepcollective.com" target="_blank" rel="noopener"
+                    style="color:rgba(255,255,255,0.45);font-size:0.82rem;text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s;"
+                    onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">
+                    🌐 www.thecollegeprepcollective.com
+                </a>
+            </div>
+            <div style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                <a href="https://www.tiktok.com/@thecollegeprepcollective" target="_blank" rel="noopener"
+                    style="display:flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.45rem 0.9rem;border-radius:2px;color:rgba(255,255,255,0.55);font-size:0.75rem;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;"
+                    onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.55)'">
+                    ♪ TikTok
+                </a>
+                <a href="https://www.instagram.com/thecollegeprepcollective" target="_blank" rel="noopener"
+                    style="display:flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.45rem 0.9rem;border-radius:2px;color:rgba(255,255,255,0.55);font-size:0.75rem;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;"
+                    onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.55)'">
+                    ◎ Instagram
+                </a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+                <li><a href="#about">About Dr. Krystal</a></li>
+                <li><a href="#services">Services & Pricing</a></li>
+                <li><a href="#quick-wins">Quick Wins</a></li>
+                <li><a href="#membership">The Collective</a></li>
+                <li><a href="#results">Student Results</a></li>
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Work Together</h4>
+            <ul>
+                <li><a href="https://calendly.com/hello-thecollegeprepcollective/30min" target="_blank"
+                        rel="noopener">Book Free Consultation</a></li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/the-foundation-package-e2uwx9np">The
+                        Foundation — $397</a></li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/the-strategy--1ta6r5gp">The Strategy —
+                        $1,497</a></li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/the-application-">The Application —
+                        $3,997</a></li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/the-vip-package">The VIP Experience —
+                        $8,500</a></li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/fafsa-prep-session">FAFSA Prep — $147</a>
+                </li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/college-essay-review-5ol3njg6">Essay Review
+                        — $97</a></li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/college-list-audit">List Audit — $127</a>
+                </li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/the-collective--monthly-membership">The
+                        Collective — $37/mo</a></li>
+                <li><a target="_blank" rel="noopener"
+                        href="https://stan.store/TheCollegePrepCollective/p/the-college-blueprint">Starter Guide —
+                        $25</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2025 The College Prep Collective · Dr. Krystal Johnson · All rights reserved</p>
+        <p style="color:rgba(255,255,255,0.2);font-size:0.75rem">
+            <a href="mailto:hello@thecollegeprepcollective.com"
+                style="color:rgba(255,255,255,0.2);text-decoration:none;">hello@thecollegeprepcollective.com</a>
+        </p>
+    </div>
+
+    <!-- MODAL -->
+
+    <div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div id="form-content">
+                <h3>Book Your Free Consultation</h3>
+                <p class="modal-sub">20 minutes. No pressure. Just clarity on where your student stands and what comes
+                    next.</p>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" id="fname" placeholder="Jane" />
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" id="lname" placeholder="Smith" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="jane@email.com" />
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(555) 000-0000" />
+                </div>
+                <div class="form-group">
+                    <label>Student's Current Grade</label>
+                    <select id="grade">
+                        <option value="">Select grade level</option>
+                        <option>9th Grade (Freshman)</option>
+                        <option>10th Grade (Sophomore)</option>
+                        <option>11th Grade (Junior)</option>
+                        <option>12th Grade (Senior)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>What's your biggest challenge right now?</label>
+                    <textarea id="challenge" rows="3"
+                        placeholder="College list? Essays? Financial aid? Something else?"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>I'm interested in</label>
+                    <select id="interest">
+                        <option value="">Select a service</option>
+                        <optgroup label="Packages">
+                            <option>Free 20-min Consultation</option>
+                            <option>The Foundation — $397</option>
+                            <option>The Strategy — $1,497</option>
+                            <option>The Application — $3,997</option>
+                            <option>The VIP Experience — $8,500 (By Application)</option>
+                        </optgroup>
+                        <optgroup label="Quick Wins">
+                            <option>FAFSA Prep Session — $147</option>
+                            <option>Award Letter Analysis — $197</option>
+                            <option>College Essay Review — $97</option>
+                            <option>College List Audit — $127</option>
+                        </optgroup>
+                        <optgroup label="Community & Resources">
+                            <option>The Collective Membership — $37/mo</option>
+                            <option>Starter Guide — $25</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <button class="btn-submit" onclick="submitForm()">Book My Free Consultation →</button>
+            </div>
+            <div class="form-success" id="form-success">
+                <div class="check">✦</div>
+                <h4>You're all set!</h4>
+                <p>Thank you for reaching out. Dr. Krystal will be in touch within 24 hours to confirm your
+                    consultation.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal
+        function openModal() {
+            document.getElementById('modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function handleOverlayClick(e) {
+            if (e.target === document.getElementById('modal')) closeModal();
+        }
+
+        // Form submit (frontend only — connects to backend endpoint)
+        async function submitForm() {
+            const data = {
+                firstName: document.getElementById('fname').value,
+                lastName: document.getElementById('lname').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                grade: document.getElementById('grade').value,
+                challenge: document.getElementById('challenge').value,
+                interest: document.getElementById('interest').value,
+            };
+
+            if (!data.firstName || !data.email) {
+                alert('Please fill in your name and email to continue.');
+                return;
+            }
+
+            try {
+                // POST to backend — update this URL after deploying your backend
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                // Show success regardless for now
+            } catch (e) {
+                // Show success regardless (backend not yet connected)
+            }
+
+            document.getElementById('form-content').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        }
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.1 });
+        reveals.forEach(r => observer.observe(r));
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const icon = item.querySelector('.faq-icon');
+                const answer = item.querySelector('.faq-a');
+                const isOpen = icon.textContent === '−';
+                icon.textContent = isOpen ? '+' : '−';
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
+            // Close by default
+            item.querySelector('.faq-a').style.display = 'none';
+            item.querySelector('.faq-icon').textContent = '+';
+        });
+    </script>
+
+</body>
+
+</html>
