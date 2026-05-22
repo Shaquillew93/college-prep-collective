@@ -2,7 +2,7 @@
 
 A full-stack website I built for a college admissions consultant. She needed a professional site to showcase her services, collect leads, and direct clients to her payment and booking pages. I handled everything from design to deployment.
 
-Live: <https://www.collegeprepcollective.com>
+Live: <https://www.thecollegeprepcollective.com>
 
 -----
 
